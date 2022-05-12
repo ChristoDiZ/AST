@@ -73,7 +73,7 @@ window.addEventListener('load',  async () => {
         let riesgo3 = document.getElementById('riesgo3').value;
         let medidas3 = document.getElementById('medidas3').value;
         let nivel3 = document.getElementById('nivel3').value;
-        let cascoSeguridad = document.getElementById('cascoSeguridad').value;
+        let cascoSeguridad = document.querySelector('input[name="cascoSeguridad"]:checked').value;
         let lente = document.getElementById('lente').value;
         let facial = document.getElementById('facial').value;
 
@@ -201,7 +201,7 @@ async function generatePDF(cliente,supervisor,areaLugar,pts,trabajoDesc,tipoActi
     pdf.addImage(image2, 'PNG', 0, 0, 605, 792);
 
     
-    if (parseInt(cascoSeguridad) === 0)
+    if (parseInt(cascoSeguridad) === 1)
         pdf.circle(131.2, 125.5, 2,'FD');
     
     if (parseInt(lente) === 0)
